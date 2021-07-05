@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="envy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-07-05 12:56:02 AM"/>
+        <attribute name="created" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNy0wNTsxMjoyOTo1MyBBTTsyNzky"/>
+        <attribute name="edited" value="ZW52eTtERVNLVE9QLUVGS0w1S0k7MjAyMS0wNy0wNTsxMjo1NjowMiBBTTsxOzI4OTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="start" type="String" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hw" type="Integer" array="False" size=""/>
+            <declare name="rop" type="Integer" array="False" size=""/>
+            <declare name="gp" type="Real" array="False" size=""/>
+            <declare name="totGp" type="Integer" array="False" size=""/>
+            <declare name="numEmp" type="Integer" array="False" size=""/>
+            <assign variable="numEmp" expression="0"/>
+            <assign variable="totGp" expression="0"/>
+            <output expression="&quot;Do you want to start? (yes or no)&quot;" newline="True"/>
+            <input variable="start"/>
+            <while expression="start == &quot;yes&quot;">
+                <assign variable="numEmp" expression="numEmp + 1"/>
+                <output expression="&quot;what is your last name&quot;" newline="True"/>
+                <input variable="lastname"/>
+                <output expression="&quot;how many hours worked?&quot;" newline="True"/>
+                <input variable="hw"/>
+                <output expression="&quot;what is the rate of pay&quot;" newline="True"/>
+                <input variable="rop"/>
+                <if expression="hw &gt;= 40">
+                    <then>
+                        <assign variable="gp" expression="(40 * rop) + ((40 - hw) * rop)"/>
+                    </then>
+                    <else>
+                        <assign variable="gp" expression="hw * rop"/>
+                    </else>
+                </if>
+                <assign variable="totGp" expression="totGp + gp"/>
+                <output expression="lastName &amp; &quot;, gross pay: &quot; &amp; gp" newline="True"/>
+                <output expression="&quot;Do you want to start again?&quot;" newline="True"/>
+                <input variable="start"/>
+            </while>
+            <output expression="&quot;Total Employee Gross Pay: &quot; &amp; totGp" newline="True"/>
+            <output expression="&quot;Total Employees: &quot; &amp; numEmp" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
